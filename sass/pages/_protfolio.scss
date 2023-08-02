@@ -1,0 +1,67 @@
+@use "../layout/varibles" as *;
+@use "../layout/helpers" as *;
+/* ? start protfolio */
+.protfolio {
+    h2 {
+        text-align: center;
+        font-size: unset;
+    }
+    .protfolio-container {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, 250px);
+        justify-content: center;
+        gap: $main-gap;
+        .image {
+            position: relative;
+            width: 250px;
+            height: 250px;
+            border-radius: 20px;
+            img {
+                display: block;
+                width: 100%;
+                height: 100%;
+                border-radius: inherit;
+            }
+            &:hover {
+                .source {
+                    transform: scale(1);
+                }
+            }
+            .source {
+                border-radius: inherit;
+                position: absolute;
+                width: 100%;
+                height: 100%;
+                left: 0;
+                top: 0;
+                background-color: $main-clr;
+                display: flex;
+                flex-direction: column;
+                gap: $main-gap;
+                justify-content: center;
+                transition: $transition;
+                align-items: center;
+                transform: scale(0);
+                .source-container {
+                    display: flex;
+                    gap: $main-gap / 2;
+                    a {
+                        @include circle(70px);
+                        background-color: $blue-clr-1;
+                        transition: $transition;
+                        display: flex;
+                        justify-content: center;
+                        align-items: center;
+                        color: $white-color;
+                        &:hover {
+                            background-color: $white-color;
+                            color: $black-clr-1;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+/* !  end protfolio */

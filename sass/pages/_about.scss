@@ -1,0 +1,154 @@
+@use "../layout/varibles" as *;
+@use "../layout/helpers" as *;
+
+/* ? start about */
+.about {
+    .about-container {
+        @media (min-width: 762px) {
+            display: flex;
+            gap: 10px;
+        }
+        .left {
+            h3 {
+                margin: $main-gap 0;
+            }
+            p.top {
+                font-size: 1.2rem;
+            }
+            p:last-of-type {
+                margin-top: $main-gap;
+                font-size: 0.8rem;
+            }
+        }
+        .right {
+            @media (min-width: 762px) {
+                width: 50%;
+                display: grid;
+                grid-template-columns: repeat(2, 1fr);
+                column-gap: $main-gap;
+            }
+
+            .box {
+                padding: 20px;
+                border: 1px solid $black-clr-1;
+                margin-bottom: $main-gap;
+                transition-property: all;
+                transition-duration: 0.4s;
+
+                @media (max-width: 762px) {
+                    &.hide {
+                        &:nth-child(odd) {
+                            transform: translateX(-100vw);
+                        }
+                        &:nth-child(even) {
+                            transform: translateX(100vw);
+                        }
+                    }
+                    &.show {
+                        transform: translateX(0);
+                    }
+                    @for $i from 1 through 4 {
+                        &:nth-child(#{$i}) {
+                            transition-delay: 0.4s * ($i - 1);
+                        }
+                    }
+                }
+                .count {
+                    color: $main-clr;
+                    font-size: 2rem;
+                }
+                .subject {
+                    margin-left: 2rem;
+                }
+                &:hover {
+                    border-color: $main-clr;
+                    transform: translate(0, -10px);
+                }
+            }
+        }
+    }
+    .skills {
+        .skills-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: $main-gap;
+            .skill-box {
+                text-transform: uppercase;
+                min-width: 250px;
+                .prog-container {
+                    display: flex;
+                    align-items: center;
+                    gap: $main-gap/2;
+                    .prog-display {
+                        color: $grey-clr-1;
+                    }
+                    .progress {
+                        background-color: $black-clr-2;
+                        width: 100%;
+                        height: 5px;
+                        border-radius: 2px;
+                        position: relative;
+                        div {
+                            border-radius: inherit;
+                            position: absolute;
+                            left: 0;
+                            width: 0;
+                            height: 100%;
+                            background-color: $main-clr;
+                            transition: $transition;
+                        }
+                    }
+                }
+            }
+        }
+    }
+    .time-line {
+        .time-line-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: $main-gap;
+            .time-box {
+                display: flex;
+                gap: 1rem;
+                .icon {
+                    @include circle(50px);
+                    background-color: $main-clr;
+                    position: relative;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    &::before {
+                        content: "";
+                        width: 2px;
+                        height: 100px;
+                        position: absolute;
+                        background-color: $main-clr;
+                        left: 50%;
+                        top: 0;
+                        transform: translateX(-50%);
+                    }
+                }
+                .content {
+                    .date {
+                        color: $grey-clr-1;
+                        padding: 10px;
+                        background-color: $black-clr-1;
+                        width: fit-content;
+                        border-radius: 20px;
+                    }
+                    h3 {
+                        color: $white-color;
+                        margin: 8px 0;
+                        span {
+                            color: $grey-clr-1;
+                            font-weight: normal;
+                        }
+                    }
+                    p {
+                        color: $grey-clr-1;
+                    }
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,52 @@
+@use "../layout/varibles" as *;
+/* ? start blog */
+.blog {
+    .blog-container {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, 250px);
+        gap: 3rem;
+        justify-content: center;
+        align-content: center;
+        article {
+            width: 250px;
+            height: 550px;
+            background-color: $black-clr-1;
+            transition: $transition;
+            .image {
+                border-bottom: 7px solid $main-clr;
+                img {
+                    display: block;
+                    width: 250px;
+                    height: 250px;
+                    filter: grayscale(1);
+                    transition: $transition;
+                }
+            }
+            .text {
+                padding: $main-padding;
+                h3 {
+                    transition: $transition;
+                    font-size: 1.2rem;
+                    cursor: pointer;
+                    text-transform: capitalize;
+                    &:hover {
+                        color: $main-clr;
+                    }
+                }
+                p {
+                    padding-top: $main-padding;
+                    color: $grey-clr-1;
+                }
+            }
+            &:hover {
+                transform: translateY(-15px);
+                img {
+                    transform: scale(1.1);
+                    filter: grayscale(0);
+                }
+            }
+        }
+    }
+}
+
+/* ! end  blog */
