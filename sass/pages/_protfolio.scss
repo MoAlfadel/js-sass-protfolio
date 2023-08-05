@@ -34,7 +34,7 @@
                 height: 100%;
                 left: 0;
                 top: 0;
-                background-color: $main-clr;
+                background-color: var(--main-clr);
                 display: flex;
                 flex-direction: column;
                 gap: $main-gap;
@@ -44,18 +44,18 @@
                 transform: scale(0);
                 .source-container {
                     display: flex;
-                    gap: $main-gap / 2;
+                    gap: calc($main-gap / 2);
                     a {
                         @include circle(70px);
-                        background-color: $blue-clr-1;
+                        background-color: var(--blue-clr-1);
                         transition: $transition;
                         display: flex;
                         justify-content: center;
                         align-items: center;
-                        color: $white-color;
+                        color: var(--white-color);
                         &:hover {
-                            background-color: $white-color;
-                            color: $black-clr-1;
+                            background-color: var(--white-color);
+                            color: var(--black-clr-1);
                         }
                     }
                 }

@@ -20,7 +20,7 @@
                 font-size: 2.5rem;
             }
             span {
-                color: $main-clr;
+                color: var(--main-clr);
             }
         }
         p {
@@ -47,7 +47,7 @@
         .shape {
             clip-path: polygon(0 0, 16% 0, 59% 100%, 0% 100%);
             position: absolute;
-            background-color: $main-clr;
+            background-color: var(--main-clr);
             z-index: -1;
             left: 0;
             bottom: 0;

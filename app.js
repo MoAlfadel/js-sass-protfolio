@@ -15,7 +15,10 @@ navBtns.forEach((btn) => {
         document.querySelector(`.${btn.id}`).classList.add("active");
     });
 });
-
+document.getElementById("theme").addEventListener("click", () => {
+    console.log(document.documentElement.classList);
+    document.documentElement.classList.toggle("light-mode");
+});
 // about
 let info = document.querySelector(".about-container > .right");
 let infoBoxes = document.querySelectorAll(".about-container > .right .box");

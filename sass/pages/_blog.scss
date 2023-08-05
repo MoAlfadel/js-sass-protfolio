@@ -10,10 +10,10 @@
         article {
             width: 250px;
             height: 550px;
-            background-color: $black-clr-1;
+            background-color: var(--black-clr-1);
             transition: $transition;
             .image {
-                border-bottom: 7px solid $main-clr;
+                border-bottom: 7px solid var(--main-clr);
                 img {
                     display: block;
                     width: 250px;
@@ -30,12 +30,12 @@
                     cursor: pointer;
                     text-transform: capitalize;
                     &:hover {
-                        color: $main-clr;
+                        color: var(--main-clr);
                     }
                 }
                 p {
                     padding-top: $main-padding;
-                    color: $grey-clr-1;
+                    color: var(--grey-clr-1);
                 }
             }
             &:hover {
